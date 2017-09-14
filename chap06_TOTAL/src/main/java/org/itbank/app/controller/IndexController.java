@@ -28,4 +28,24 @@ public class IndexController {
 			mav.addObject("section", "index");
 		return mav;
 	}
+	@RequestMapping("/login")
+	public String loginHandle(Map map) {
+		map.put("section", "login");
+		return "t_expr";
+	}
+
+	@RequestMapping("/session")
+	public String sessionHandle(@RequestParam Map param, Model model, HttpSession session) throws SQLException {
+		HashMap t = memberDao.readOne(param);
+		if (t != null) {
+			session.setAttribute("auth", t);
+			return "redirect:/";
+		} else {
+			model.addAttribute("temp", param);
+			model.addAttribute("section", "login");
+			return "login";
+		}
+	}
+	
+	
 } 
