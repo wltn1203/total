@@ -3,5 +3,6 @@
 <div align="right">
 	<a href="/login">Login</a> | 
 	<a href="/join">Join</a> | 
+	<a href="/my/info">Info</a> |
 	<a href="/board/list">Board</a>
 </div>
