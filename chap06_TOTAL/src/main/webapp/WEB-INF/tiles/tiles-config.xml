@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	
 	<!-- tile register -->
-	<definition name="t_base" template="/WEB-INF/views/template.jsp">
-		<put-attribute name="title" value="HUB"/>
-		<put-attribute name="header" value="/WEB-INF/views/header.jsp"/>
-		<put-attribute name="nav" value="/WEB-INF/views/nav.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/> 
+	<definition name="t_base" template="/WEB-INF/views/template/template.jsp">
+		<put-attribute name="title" value="HUB" />
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp" />
+		<put-attribute name="nav" value="/WEB-INF/views/template/nav.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
 	</definition>
-	
-	<definition name="t_login" extends="t_base">
-		<put-attribute name="title" value="로그인 - HUB"/>
-		<put-attribute name="section" value="/WEB-INF/views/login.jsp"/>
+	<!-- el support -->
+	<definition name="t_expr" extends="t_base">
+		<put-attribute name="section"
+			expression="/WEB-INF/views/${section}.jsp" />
 	</definition>
-	
-	<definition name="t_join" 
-		template="/WEB-INF/views/template.jsp">
-		<put-attribute name="title" value="회원가입 - HUB"/>
-		<put-attribute name="header" value="/WEB-INF/views/header.jsp"/>
-		<put-attribute name="nav" value="/WEB-INF/views/nav.jsp"/>
-		<put-attribute name="section" value="/WEB-INF/views/join.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>                                                                                                                                                                                                                    
-	</definition>
-	
-	<definition name="t_board_all" 
-		template="/WEB-INF/views/template.jsp">
-		<put-attribute name="title" value="게시판 - HUB"/>
-		<put-attribute name="header" value="/WEB-INF/views/header.jsp"/>
-		<put-attribute name="nav" value="/WEB-INF/views/nav.jsp"/>
-		<put-attribute name="section" value="/WEB-INF/views/board/list.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
-	</definition>
-	
 </tiles-definitions>

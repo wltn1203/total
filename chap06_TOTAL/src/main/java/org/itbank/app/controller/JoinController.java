@@ -20,8 +20,9 @@ public class JoinController {
 	MemberDao memberDao;
 
 	@GetMapping(path = "/join")
-	public String joinGetHandle() {
-		return "t_join";
+	public String joinGetHandle(Model model) {
+		model.addAttribute("section", "join");
+		return "t_expr";
 	}
 
 	@PostMapping("/join")
@@ -33,7 +34,8 @@ public class JoinController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("temp", map);
-			return "join";
+			model.addAttribute("section", "join");
+			return "t_expr";
 		}
 	}
 
