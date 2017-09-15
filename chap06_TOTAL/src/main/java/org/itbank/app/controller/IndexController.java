@@ -43,7 +43,7 @@ public class IndexController {
 		} else {
 			model.addAttribute("temp", param);
 			model.addAttribute("section", "login");
-			return "login";
+			return "t_expr";
 		}
 	}
 	

@@ -16,5 +16,9 @@ public class DetailDao {
 	public Map Getinfo(String id) {
 		return sql.selectOne("detail.getInfo", id);
 	}
-	
+	// 개인정보 등록
+	public int Upinfo(Map map) {
+		return  sql.update("detail.updateOneDetail", map);
+		
+	}
 }
