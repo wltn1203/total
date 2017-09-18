@@ -13,8 +13,9 @@
 			<b>${auth.ID } <i>(${auth.NAME })</i> || LOG ON</b>
 			</p>
 			<p>
-			<a href="/my/info">Info</a> |
-			<a href="/my/profile">Profile</a>
+			<a href="/my/info">내정보</a> |
+			<a href="/my/profile">프로필</a> |
+			<a href="/info/mlist">전체회원목록</a>
 			</p>
 		</c:otherwise>
 	</c:choose>

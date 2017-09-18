@@ -30,7 +30,7 @@
 			<p>
 				<b>BIRTH</b><br /> <select name="birth">
 					<c:forEach var="i" begin="2000" end="1900" step="1">
-						<option value="${i} " "${i ne one.birth ? "selected" : "" }"></option>
+						<option value="${i} " ${i ne one.birth ? "selected" : "" }></option>
 					</c:forEach>
 				</select>
 			</p>

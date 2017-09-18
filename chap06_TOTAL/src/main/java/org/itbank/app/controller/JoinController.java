@@ -1,18 +1,16 @@
 package org.itbank.app.controller;
 
-import java.sql.SQLException;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.itbank.app.model.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import org.itbank.app.model.*;
 
 @Controller
 public class JoinController {
@@ -23,7 +21,7 @@ public class JoinController {
 	public String joinGetHandle(Model model) {
 		model.addAttribute("section", "join");
 		return "t_expr";
-	}
+	}  
 
 	@PostMapping("/join")
 	public String joinPostHandle(@RequestParam Map map, HttpSession session, Model model) {
