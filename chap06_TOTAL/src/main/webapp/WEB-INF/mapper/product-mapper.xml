@@ -20,6 +20,8 @@
 		select * from product where sprice &lt; #{sprice}
 		<if test="mode != null">
 			 and eprice is not null
+			 
+			 
 		</if>
 	</select>
 	<select id="getAll" resultType="java.util.HashMap">
