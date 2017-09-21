@@ -18,6 +18,21 @@
 	<mvc:default-servlet-handler />
 	<context:component-scan base-package="org.itbank.app" />
 	
+	<!-- mailSender -->
+	<bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"/>
+		<property name="port" value="587"/>
+		<property name="username" value="1203wltn"/>
+		<property name="password" value="a1203305"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>		
+		</property>
+	</bean>
+	
+	
 	<!-- websocket handler -->
 	<bean class="org.itbank.app.controller.ws.BasicWSHandler" id="bws"/>
 	

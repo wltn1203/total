@@ -13,7 +13,7 @@
 <div align="center" style="line-height: 35px">
 	<h2>쪽지함</h2>
 	<p>
-		<b>${auth.ID }</b>님에게  총 <b><%=list.size() %></b> 개의 쪽지가 있습니다.
+		<b>${auth.ID }</b>님에게  총 <b></b> 개의 쪽지가 있습니다.
 	</p>
 	<form action="/memo/delete.jsp">
 		<table style="width: 80%">
@@ -36,24 +36,6 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%
-				for (Map t : list) {
-			%>
-				<tr>
-					<td><input class="allcheck" type="checkbox" name="no" value="<%=t.get("no")%>"/></td>
-					<td>
-						<%if(! t.get("sender").equals(id) ){ %>
-						<a href="/member/find.jsp?target=<%=t.get("sender")%>">
-							<%=t.get("sender") %></a>
-						<%}else { %>
-							<%=t.get("sender") %>
-						<%} %>
-					</td>
-					<td><%=t.get("content") %></td>
-				</tr>
-			<%
-				}
-			%>
 			</tbody>
 			<tfoot>
 				<tr>

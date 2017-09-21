@@ -35,7 +35,7 @@ public class LoginController {
 			HashMap u = memberDao.readOneByIdOrEmail((String)param.get("idmail"));
 			System.out.println(t);
 			session.setAttribute("auth", u);
-			session.setAttribute("auth_id", u.get("ID"));
+			session.setAttribute("auth_id", u.get("id"));
 			mav.setViewName("redirect:/");
 		} else {
 			mav.setViewName("t_expr");
